@@ -1,9 +1,11 @@
 package au.com.riosoftware.task.service;
 
+import au.com.riosoftware.task.controller.request.UserTask;
 import au.com.riosoftware.task.model.Task;
 import au.com.riosoftware.task.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +24,8 @@ public class TaskService {
         return this.taskRepository.save(task);
     }
 
-    public Optional<List<Task>> getAllTasks() {
+    public List<Task> getAllTasks() {
         return this.taskRepository.findAll();
     }
+
 }
