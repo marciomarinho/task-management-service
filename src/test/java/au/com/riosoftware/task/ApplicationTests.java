@@ -1,7 +1,10 @@
 package au.com.riosoftware.task;
 
 import au.com.riosoftware.task.model.Task;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -16,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ApplicationTests {
 
     @LocalServerPort
@@ -25,6 +29,7 @@ class ApplicationTests {
     private TestRestTemplate restTemplate;
 
     @Test
+    @Order(1)
     void shouldGetAllTasks() {
         List<Task> result = this.restTemplate.getForObject("http://localhost:" + port + "/tasks",
                 List.class);
@@ -32,6 +37,7 @@ class ApplicationTests {
     }
 
     @Test
+    @Order(2)
     void shouldCreateTask() {
         Task newTask = new Task("New Task", "Something for our tests", null);
         HttpEntity<Task> request = new HttpEntity<>(newTask);
