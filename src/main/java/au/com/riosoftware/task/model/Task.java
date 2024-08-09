@@ -2,6 +2,8 @@ package au.com.riosoftware.task.model;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 public class Task {
 
@@ -23,6 +25,12 @@ public class Task {
 
     public Task(Long id, String title, String description, User user) {
         this.id = id;
+        this.title = title;
+        this.description = description;
+        this.user = user;
+    }
+
+    public Task(String title, String description, User user) {
         this.title = title;
         this.description = description;
         this.user = user;
@@ -62,5 +70,18 @@ public class Task {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return Objects.equals(id, task.id) && Objects.equals(title, task.title) && Objects.equals(description, task.description) && Objects.equals(user, task.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, user);
     }
 }

@@ -25,4 +25,12 @@ public class TaskService {
         return this.taskRepository.findAll();
     }
 
+    public Task findTaskById(final long id) {
+        return this.taskRepository.findById(id);
+    }
+
+    public void deleteTask(final Task task) {
+        this.taskRepository.delete(task);
+    }
+
 }

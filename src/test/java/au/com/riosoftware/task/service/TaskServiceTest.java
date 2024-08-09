@@ -2,11 +2,8 @@ package au.com.riosoftware.task.service;
 
 import au.com.riosoftware.task.model.Task;
 import au.com.riosoftware.task.repository.TaskRepository;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -32,6 +29,23 @@ class TaskServiceTest {
     void shouldGetAllTasks() {
         taskService.getAllTasks();
         verify(taskRepository, times(1)).findAll();
+    }
+
+    @Test
+    void shouldFindTaskById() {
+        taskService.findTaskById(1l);
+        taskService.findTaskById(2l);
+        taskService.findTaskById(3l);
+        verify(taskRepository, times(1)).findById(1);
+        verify(taskRepository, times(1)).findById(2);
+        verify(taskRepository, times(1)).findById(3);
+    }
+
+    @Test
+    void shouldDeleteTask() {
+        Task task = new Task(1l, "", "");
+        taskService.deleteTask(task);
+        verify(taskRepository, times(1)).delete(task);
     }
 
 }
