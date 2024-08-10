@@ -20,6 +20,12 @@ Task-Boot-Man is a Restful API designed and developed using spring boot. Here is
 - Tasks CRUD
 - Task vs User association
 
+## Swagger 
+
+Run the application and hit http://localhost:8080/swagger-ui/index.html
+
+![](screencapture-localhost-8080-swagger-ui-index-html-2024-08-10-15_26_52.png)
+
 ## License
 
 MIT
