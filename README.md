@@ -1,0 +1,27 @@
+# Task Management - Spring Boot edition.
+## Task-Boot-Man
+
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+Task-Boot-Man is a Restful API designed and developed using spring boot. Here is the tech stack.
+
+- Spring Boot 3.3.2
+- PostgreSQL
+- Docker & Docker Compse
+- H2 in memory database
+- Flyway database versioning
+- Swagger
+
+## Features
+
+- Users CRUD
+- Tasks CRUD
+- Task vs User association
+
+## License
+
+MIT
+
+**Free Software, Hell Yeah!**
