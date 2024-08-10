@@ -1,0 +1,27 @@
+### POST request to create user Marcio
+POST http://localhost:8080/users
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "name": "Marcio Marinho"
+}
+
+### POST request to create user Peter
+POST http://localhost:8080/users
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "name": "Peter Pan"
+}
+
+### POST request to create user Elvis
+POST http://localhost:8080/users
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "name": "Elvis Presley"
+}
+###

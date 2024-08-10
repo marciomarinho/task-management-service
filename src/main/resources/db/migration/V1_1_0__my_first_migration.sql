@@ -20,12 +20,12 @@ alter table if exists task
     foreign key (user_id)
     references task_user;
 
-insert into task_user(id, name) values
-    (nextval('user_seq'), 'Marcio Marinho'),
-    (nextval('user_seq'), 'Peter Pan'),
-    (nextval('user_seq'), 'Elvis Presley');
-
-insert into task(id, title, description, user_id) values
-    (nextval('task_seq'), 'A simple task', 'Something really simple to accomplish', (select id from task_user where name='Marcio Marinho')),
-    (nextval('task_seq'), 'Another task', 'This one is still not too hard', (select id from task_user where name='Peter Pan')),
-    (nextval('task_seq'), 'Hardcore task', 'Here you will feel pain and despair', (select id from task_user where name='Elvis Presley'));
+-- insert into task_user(id, name) values
+--     (nextval('user_seq'), 'Marcio Marinho'),
+--     (nextval('user_seq'), 'Peter Pan'),
+--     (nextval('user_seq'), 'Elvis Presley');
+--
+-- insert into task(id, title, description, user_id) values
+--     (nextval('task_seq'), 'A simple task', 'Something really simple to accomplish', (select id from task_user where name='Marcio Marinho')),
+--     (nextval('task_seq'), 'Another task', 'This one is still not too hard', (select id from task_user where name='Peter Pan')),
+--     (nextval('task_seq'), 'Hardcore task', 'Here you will feel pain and despair', (select id from task_user where name='Elvis Presley'));

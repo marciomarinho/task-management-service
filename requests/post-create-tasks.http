@@ -1,0 +1,27 @@
+### POST request to create user Marcio
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title" : "A simple task",
+  "description": "Something really simple to accomplish"
+}
+
+### POST request to create user Peter
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title" : "Another task",
+  "description": "This one is still not too hard"
+}
+
+### POST request to create user Elvis
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title" : "Hardcore task",
+  "description": "Here you will feel pain and despair"
+}
+###
