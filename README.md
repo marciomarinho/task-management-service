@@ -26,6 +26,15 @@ Here is the tech stack.
 - Tasks CRUD
 - Task vs User association
 
+## Pre-requisites
+
+- JDK 21
+- Maven 3.9
+- Docker
+
+## Running the application 
+
+- mvn spring-boot:run
 
 ## Swagger 
 
