@@ -19,7 +19,7 @@ class TaskServiceTest {
     }
 
     @Test
-    void shouldSaveTask() {
+    void shouldCreateTask() {
         Task task = new Task(1l, "First Task", "Nothing too complicated");
         taskService.createTask(task);
         verify(taskRepository, times(1)).save(task);
@@ -29,6 +29,7 @@ class TaskServiceTest {
     void shouldGetAllTasks() {
         taskService.getAllTasks();
         verify(taskRepository, times(1)).findAll();
+        verifyNoMoreInteractions(taskRepository);
     }
 
     @Test
@@ -39,6 +40,7 @@ class TaskServiceTest {
         verify(taskRepository, times(1)).findById(1);
         verify(taskRepository, times(1)).findById(2);
         verify(taskRepository, times(1)).findById(3);
+        verifyNoMoreInteractions(taskRepository);
     }
 
     @Test
@@ -46,6 +48,7 @@ class TaskServiceTest {
         Task task = new Task(1l, "", "");
         taskService.deleteTask(task);
         verify(taskRepository, times(1)).delete(task);
+        verifyNoMoreInteractions(taskRepository);
     }
 
 }
